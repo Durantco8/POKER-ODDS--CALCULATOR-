@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://poker-odds-calculator-1.onrender.com/sitemap.xml
