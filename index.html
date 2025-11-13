@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =====================================================
+       META & PAGE SETTINGS
+  ====================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interactive Texas Hold’em odds calculator. Simulate hands, view win percentages, and analyze board textures in real time." />
+  <title>Texas Hold’em Odds Calculator</title>
+
+  <!-- =====================================================
+       STYLESHEETS
+  ====================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/styles.css" />
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" type="image/png" href="static/img/favicon.png" />
+</head>
+
+<body>
+  <main class="table">
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+    <header>
+      <h1>Texas Hold’em Odds Calculator</h1>
+    </header>
+
+    <!-- =====================================================
+         COMMUNITY CARDS (BOARD)
+    ====================================================== -->
+    <section id="board-section" class="board" aria-label="Community cards">
+      <h2 class="visually-hidden">Community Cards</h2>
+      <div class="card-row" id="board-cards"></div>
+    </section>
+
+    <!-- =====================================================
+         SETUP SECTION (PLAYER COUNT SELECTION)
+    ====================================================== -->
+    <section id="setup" class="setup" aria-label="Game setup">
+      <label for="player-count">Number of Players:</label>
+      <select id="player-count" name="player-count">
+        <option value="2" selected>2 Players</option>
+        <option value="3">3 Players</option>
+        <option value="4">4 Players</option>
+        <option value="5">5 Players</option>
+        <option value="6">6 Players</option>
+        <option value="7">7 Players</option>
+        <option value="8">8 Players</option>
+        <option value="9">9 Players</option>
+      </select>
+      <button id="start-game" type="button">Start</button>
+    </section>
+
+    <!-- =====================================================
+         CONTROLS (CLEAR / UNDO)
+    ====================================================== -->
+    <section class="controls" aria-label="Table controls">
+      <button id="clear" type="button">Clear Table</button>
+      <button id="undo" type="button">Undo</button>
+      <button id="toggle-deck">Hide Deck</button>
+
+    </section>
+
+    <!-- =====================================================
+         MAIN POKER TABLE (HIDDEN UNTIL START)
+    ====================================================== -->
+    <section id="poker-table" class="poker-table hidden" aria-label="Poker table">
+      <!-- Community cards area inside table -->
+      <div class="board">
+        <div class="card-row" id="board-cards-table"></div>
+      </div>
+
+      <!-- Dynamic player seats (rendered by JS) -->
+      <div id="players" class="players"></div>
+    </section>
+
+    <!-- =====================================================
+         CARD SELECTION AREA (DECK)
+    ====================================================== -->
+    <section id="deck-section" aria-label="Select cards">
+      <h2>Select Cards</h2>
+      <div id="deck" class="deck"></div>
+    </section>
+
+    <!-- =====================================================
+         RESULTS DISPLAY
+    ====================================================== -->
+    <section id="results" class="results" aria-live="polite"></section>
+  </main>
+
+  <!-- =====================================================
+       SCRIPTS
+  ====================================================== -->
+  <script src="static/js/ui.js"></script>
+  <script src="static/js/main.js"></script>
+</body>
+</html>
